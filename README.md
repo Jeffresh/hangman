@@ -16,3 +16,5 @@ Let's have a brief overview of what you are going to build during this project. 
 It may sound complex, but the project is split into small stages with hints to see you through. The final product is sure to be replayable and quite engaging!
 
 Let's start with an announcement that will greet the player. You already know how to print something using Python: try to apply your knowledge to intrigue your friends with your game announcement!
+
+At this stage, you will create a real game. It will be simple, but there will be two possible outcomes (you can see in the examples below how they look like). Let's first print a welcome message and then ask a player to guess the word we set for the game. If our player manages to guess the exact word, the game reports "win"; otherwise it will "hang" the player.
