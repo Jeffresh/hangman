@@ -38,3 +38,5 @@ In the previous stage if the user entered the same letter twice or typed a cyril
 We're almost done!
 
 Let's add more flavor to the game by adding a suggestion to replay after the current game session ends.
+
+#  This project is a part of the following track Python Developer at JetBrains Academy
