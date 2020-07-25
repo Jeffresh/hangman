@@ -1,18 +1,16 @@
 # Objectives
 #
-# Now your game should work the following way:
+# The player starts the game with 8 "lives", that is our player can input the wrong letter 8 times.
 #
-#     A player has exactly 8 tries and enters letters. If a player has more tries but he actually
-#     guessed the word, it doesn't mean anything.
-#     If the letter doesn't occur in the word, the computer takes one try away, even
-#     if the user already inputted this letter before.
-#     If the player doesn't have any more attempts, the game should end and the program should show a losing message.
-#     Otherwise, the player can continue to input letters.
-#     Also, use our previous word list: 'python', 'java', 'kotlin', 'javascript' so that your program can be tested
-#     more reliably.
+#     Print No such letter in the word and reduce the attempts count if the word guessed by
+#     the program doesn't contain this letter.
+#     Print No improvements and reduce the attempts count if the guessed word contains this
+#     letter but the user tried this letter before.
+#     The attempts count should be decreased only if there are no letters to uncover.
 #
-# Please, make sure that your program's output formatting precisely follows the example output formatting.
-# Pay attention to the empty lines between tries and in the end.
+# Please, make sure that your program's output formatting precisely follows the example output
+# formatting. Pay attention to the empty lines between tries and in the end.
+
 
 import random
 
@@ -29,23 +27,34 @@ class Hangman:
     def start_game(self):
         if self.words:
             self.guess_word = random.choice(self.words)
-            print('H A N G M A N\n')
+            print('H A N G M A N')
             tries = 0
             match_word = '-' * len(self.guess_word)
-            while tries < 8:
+            letters_tried = set()
+            while tries < 8 and '-' in match_word:
+                print()
                 print(match_word)
-                letter = input('Input a letter\n')
-                if self.guess_word.find(letter) != -1:
+                letter = input('Input a letter')
+                print()
+
+                if letter in letters_tried:
+                    tries += 1
+                    print('No improvements')
+
+                elif self.guess_word.find(letter) != -1:
+                    letters_tried.add(letter)
                     for i in range(len(self.guess_word)):
                         if self.guess_word[i] == letter:
                             match_word = match_word[:i] + letter + match_word[i + 1:]
-                            self.guess_word = self.guess_word[:i] + '_' + self.guess_word[i + 1:]
                 else:
-                    print('No such letter in the word\n')
-                tries += 1
-                print()
+                    print('No such letter in the word')
+                    tries += 1
 
-            print('Thanks for playing!', "We'll see how well you did in the next stage", sep='\n')
+            if '-' in match_word:
+                print('You are hanged!')
+            else:
+                print('You guessed the word!', "You survived!", sep='\n')
+
         else:
             print('You have to add words before start a game.')
 
