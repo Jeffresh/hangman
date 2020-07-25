@@ -20,7 +20,7 @@ class Hangman:
         if self.words:
             self.guess_word = random.choice(self.words)
             print('H A N G M A N')
-            guess = input('Guess the word:')
+            guess = input('Guess the word {}:'.format(self.guess_word[:3] + '-' * (len(self.guess_word)-3)))
             if guess == self.guess_word:
                 print('You survived!')
             else:
