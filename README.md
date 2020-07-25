@@ -22,3 +22,7 @@ At this stage, you will create a real game. It will be simple, but there will be
 If there is a predefined word, the game isn't replayable: you already know the word, so it makes no sense to guess it. At this stage, let's make the game more challenging by choosing a word from a special list with a variety of options. This way, our game won't be just a one-time entertainment.
 
 Now our game has become quite hard, and your chances of guessing the word depend on the size of the list. In our case with four words, there is only a 25% chance, so let's have mercy on the player and add a hint for them.
+
+Let's make the game iterative. It's time to make it resemble the classical Hangman a bit more: a player should guess letters in the word instead of typing the entire word at once. If the player guesses a letter, it should be uncovered in the word. For now, start with the defeat case and add 8 tries to guess a letter that appears in the word. When the player runs out of attempts, the game ends.
+
+Later we will determine the winning conditions, but in this stage, let's see how well our player guesses the word on every attempt.
