@@ -34,3 +34,7 @@ Now a player will have a lot of attempts and is limited only by the number of mi
 Now that we are done with the basics, let's work on some details.
 
 In the previous stage if the user entered the same letter twice or typed a cyrillic letter, the program reduced the number of attempts regardless if this was a correct letter or not. But it is not fair to the user, isn't it? He gains no additional information about the situation on the field yet the program still reduces his attempts count. Let's fix it!
+
+We're almost done!
+
+Let's add more flavor to the game by adding a suggestion to replay after the current game session ends.
