@@ -30,3 +30,7 @@ Later we will determine the winning conditions, but in this stage, let's see how
 The recent version of the game is not as fun until we don't handle the player's victory. A player has 8 attempts to guess letters and its number is reduced even if the letter was correct.
 
 Now a player will have a lot of attempts and is limited only by the number of mistakes they make. A player can be mistaken 8 times and wins when all the letters are guessed and there are still some tries left. If the player uses the last try and actually guesses the word, they are lucky then!
+
+Now that we are done with the basics, let's work on some details.
+
+In the previous stage if the user entered the same letter twice or typed a cyrillic letter, the program reduced the number of attempts regardless if this was a correct letter or not. But it is not fair to the user, isn't it? He gains no additional information about the situation on the field yet the program still reduces his attempts count. Let's fix it!
